@@ -61,6 +61,7 @@ n,i:integer;
 
 begin
 
+
  Edit1.Text:=Clipboard.AsText;
 
  s:=Clipboard.AsText;
@@ -75,13 +76,14 @@ begin
 
  if (ch1='F') and (ch2='F') then
 
-    begin
+   begin
 
-     n:=HexToDec(s);
+    n:=HexToDec(s);
 
-     Edit2.Text:=IntToStr(n);
+    Edit2.Text:=IntToStr(n);
 
-     Data.DataModule1.ADOQuery1.Close;
+
+    Data.DataModule1.ADOQuery1.Close;
 
      data.DataModule1.ADOQuery1.SQL.Text:='select c.idchip, 
      
@@ -134,3 +136,8 @@ begin
 
     end;                
  end;
+
+## Languages
+* Russian
+* English
+* Polish
