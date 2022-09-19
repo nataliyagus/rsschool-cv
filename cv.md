@@ -134,7 +134,8 @@ begin
 
     Timer2.Enabled:=true;
 
-    end;                
+    end;     
+               
  end;
 
 ## Languages
