@@ -37,6 +37,8 @@ programmer
 
 September 2005 - June 2010
 
+## About myself
+
 I started interested in programming at school, it was when I began studying Paskal.
 I continued my studies in college. After it at BNTU's Department of Information Systems and Technologies.
 When I graduated from the university, I started my first job at GrSMU as a programmer in the Information technology department.
@@ -47,51 +49,72 @@ After overviewing various schools and their curriculum, my choice fell on RS Sch
 
 ## Code Examples
 
-_procedure TForm1.Button1Click(Sender: TObject);_
+procedure TForm1.Button1Click(Sender: TObject);
 
-_var_
+var
 
-_s,c,s1 :string ;_
+s,c,s1 :string ;
+
 ch1,ch2:char;
+
 n,i:integer;
+
 begin
+
  Edit1.Text:=Clipboard.AsText;
+
  s:=Clipboard.AsText;
+
  if s<>'' then begin
+
  ch1:=s[1];
+
  ch2:=s[2];
+
  Label1.Caption:=ch1+ch2;
+
  if (ch1='F') and (ch2='F') then
-begin
-  n:=HexToDec(s);
-  Edit2.Text:=IntToStr(n);
-  Data.DataModule1.ADOQuery1.Close;
-  data.DataModule1.ADOQuery1.SQL.Text:='select c.idchip, b.nomz from ez_cards c, photos ph, cards_student_v b '+
-  'where ph.idperson=b.rowguid and ph.idphotos = c.idphotos and c.encodedate is not null'+
-  ' and c.idchip='+chr(39)+Edit2.Text+chr(39) ;
-  data.DataModule1.ADOQuery1.open;
-  if data.DataModule1.ADOQuery1.FieldValues['nomz']>'' then
-  c:=data.DataModule1.ADOQuery1.FieldValues['nomz']
-  else  begin
+
+    begin
+
+     n:=HexToDec(s);
+
+     Edit2.Text:=IntToStr(n);
+
+     Data.DataModule1.ADOQuery1.Close;
+
+     data.DataModule1.ADOQuery1.SQL.Text:='select c.idchip, b.nomz from ez_cards c, photos ph, cards_student_v b '+  'where ph.idperson=b.rowguid and ph.idphotos = c.idphotos and c.encodedate is not null'+  ' and c.idchip='+chr(39)+Edit2.Text+chr(39) ;
+
+     data.DataModule1.ADOQuery1.open;
+
+     if data.DataModule1.ADOQuery1.FieldValues['nomz']>'' then
+
+        c:=data.DataModule1.ADOQuery1.FieldValues['nomz']
+    else 
+
+     begin
             Data.DataModule1.ADOQuery1.Close;
-            data.DataModule1.ADOQuery1.SQL.Text:='select c.idchip, b.nomz from ez_cards c, photos ph, CARDS_SOTR_V b '+
-            'where ph.idperson=b.rowguid and ph.idphotos = c.idphotos and c.encodedate is not null'+
-            ' and c.idchip='+chr(39)+Edit2.Text+chr(39) ;
+
+            data.DataModule1.ADOQuery1.SQL.Text:='select c.idchip, b.nomz from ez_cards c, photos ph, CARDS_SOTR_V b '+ 'where ph.idperson=b.rowguid and ph.idphotos = c.idphotos and c.encodedate is not null'+ ' and c.idchip='+chr(39)+Edit2.Text+chr(39) ;
+
             data.DataModule1.ADOQuery1.open;
-           if data.DataModule1.ADOQuery1.FieldValues['nomz']>0 then
-           c:=data.DataModule1.ADOQuery1.FieldValues['nomz'];
-       end;
+
+            if data.DataModule1.ADOQuery1.FieldValues['nomz']>0 then
+
+                c:=data.DataModule1.ADOQuery1.FieldValues['nomz'];
+        end;
  
-   s1:='';
+    s1:='';
+
     for i:=1 to Length(c) do
+
         if c[i]<>' ' then s1:=s1+c[i];
 
- if c>'' then Label2.Caption:=s1;//data.DataModule1.ADOQuery1.FieldValues['nomz'];
-  data.DataModule1.ADOQuery1.Close;
+    if c>'' then Label2.Caption:=s1;
    
-
     Clipboard.AsText:=Label2.Caption ;
-     Timer2.Enabled:=true;
 
- end;                
- end;__
+    Timer2.Enabled:=true;
+
+    end;                
+ end;
