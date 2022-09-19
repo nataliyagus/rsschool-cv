@@ -45,4 +45,53 @@ Every time when I got acquainted with new technologies and introduce them to the
 I've always been passionate about learning and using all this knowledge in practice. So it's time to learn something new, something really useful nowadays and I've decided to start learning Javascript. Because so far it was a very practical and useful tool and looks like it will be in the nearest future.
 After overviewing various schools and their curriculum, my choice fell on RS School. I'll be glad to become one of your students.
 
+## Code Examples
 
+_procedure TForm1.Button1Click(Sender: TObject);_
+
+_var_
+
+_s,c,s1 :string ;_
+ch1,ch2:char;
+n,i:integer;
+begin
+ Edit1.Text:=Clipboard.AsText;
+ s:=Clipboard.AsText;
+ if s<>'' then begin
+ ch1:=s[1];
+ ch2:=s[2];
+ Label1.Caption:=ch1+ch2;
+ if (ch1='F') and (ch2='F') then
+begin
+  n:=HexToDec(s);
+  Edit2.Text:=IntToStr(n);
+  Data.DataModule1.ADOQuery1.Close;
+  data.DataModule1.ADOQuery1.SQL.Text:='select c.idchip, b.nomz from ez_cards c, photos ph, cards_student_v b '+
+  'where ph.idperson=b.rowguid and ph.idphotos = c.idphotos and c.encodedate is not null'+
+  ' and c.idchip='+chr(39)+Edit2.Text+chr(39) ;
+  data.DataModule1.ADOQuery1.open;
+  if data.DataModule1.ADOQuery1.FieldValues['nomz']>'' then
+  c:=data.DataModule1.ADOQuery1.FieldValues['nomz']
+  else  begin
+            Data.DataModule1.ADOQuery1.Close;
+            data.DataModule1.ADOQuery1.SQL.Text:='select c.idchip, b.nomz from ez_cards c, photos ph, CARDS_SOTR_V b '+
+            'where ph.idperson=b.rowguid and ph.idphotos = c.idphotos and c.encodedate is not null'+
+            ' and c.idchip='+chr(39)+Edit2.Text+chr(39) ;
+            data.DataModule1.ADOQuery1.open;
+           if data.DataModule1.ADOQuery1.FieldValues['nomz']>0 then
+           c:=data.DataModule1.ADOQuery1.FieldValues['nomz'];
+       end;
+ 
+   s1:='';
+    for i:=1 to Length(c) do
+        if c[i]<>' ' then s1:=s1+c[i];
+
+ if c>'' then Label2.Caption:=s1;//data.DataModule1.ADOQuery1.FieldValues['nomz'];
+  data.DataModule1.ADOQuery1.Close;
+   
+
+    Clipboard.AsText:=Label2.Caption ;
+     Timer2.Enabled:=true;
+
+ end;                
+ end;__
