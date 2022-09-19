@@ -83,7 +83,15 @@ begin
 
      Data.DataModule1.ADOQuery1.Close;
 
-     data.DataModule1.ADOQuery1.SQL.Text:='select c.idchip, b.nomz from ez_cards c, photos ph, cards_student_v b '+  'where ph.idperson=b.rowguid and ph.idphotos = c.idphotos and c.encodedate is not null'+  ' and c.idchip='+chr(39)+Edit2.Text+chr(39) ;
+     data.DataModule1.ADOQuery1.SQL.Text:='select c.idchip, 
+     
+     b.nomz from ez_cards c, photos ph, cards_student_v b '+ 
+     
+      'where ph.idperson=b.rowguid and ph.idphotos = c.idphotos
+      
+       and c.encodedate is not null'+  ' and c.idchip='+chr(39)
+       
+       +Edit2.Text+chr(39) ;
 
      data.DataModule1.ADOQuery1.open;
 
@@ -95,7 +103,15 @@ begin
      begin
             Data.DataModule1.ADOQuery1.Close;
 
-            data.DataModule1.ADOQuery1.SQL.Text:='select c.idchip, b.nomz from ez_cards c, photos ph, CARDS_SOTR_V b '+ 'where ph.idperson=b.rowguid and ph.idphotos = c.idphotos and c.encodedate is not null'+ ' and c.idchip='+chr(39)+Edit2.Text+chr(39) ;
+            data.DataModule1.ADOQuery1.SQL.Text:='select 
+            
+            c.idchip, b.nomz from ez_cards c, photos ph, 
+            
+            CARDS_SOTR_V b '+ 'where ph.idperson=b.rowguid and 
+            
+            ph.idphotos = c.idphotos and c.encodedate is not 
+            
+            null'+ ' and c.idchip='+chr(39)+Edit2.Text+chr(39) ;
 
             data.DataModule1.ADOQuery1.open;
 
