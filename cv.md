@@ -63,7 +63,6 @@ n,i:integer;
 
 begin
 
-
  Edit1.Text:=Clipboard.AsText;
 
  s:=Clipboard.AsText;
