@@ -63,7 +63,6 @@ n,i:integer;
 
 begin
 
-
  Edit1.Text:=Clipboard.AsText;
 
  s:=Clipboard.AsText;
@@ -95,7 +94,7 @@ begin
       
        and c.encodedate is not null'+  ' and c.idchip='+chr(39)
        
-       +Edit2.Text+chr(39) ;
+       +Edit2.Text+chr(39);
 
      data.DataModule1.ADOQuery1.open;
 
