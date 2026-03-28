@@ -32,6 +32,8 @@ body {
   background: #CCCCCC;
   margin: auto;
   margin-bottom: 20px;
+  object-fit: cover;
+  object-position: center;
  }
  .sidebar h2{
   margin-bottom: 10px;
@@ -90,4 +92,8 @@ body {
   padding: 6px 10px;
   border-radius: 6px;
   font-size: 13px;
+ }
+ .logo{
+  height: 50px;
+  width: auto;
  }
