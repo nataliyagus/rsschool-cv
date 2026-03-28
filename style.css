@@ -17,9 +17,10 @@ body {
   display: grid;
   grid-template-columns: 300px lfr;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  display: flex;
 }
-/*sidebar*/
-.sidebar{
+/*leftside*/
+.leftside{
   background: #2c3e50;
   color: #ffffff;
   padding: 30px;
@@ -32,27 +33,29 @@ body {
   background: #CCCCCC;
   margin: auto;
   margin-bottom: 20px;
-  object-fit: cover;
+  object-fit: cover; /*прячет лишее*/
   object-position: center;
  }
- .sidebar h2{
+ .leftside h2{
   margin-bottom: 10px;
   font-size: 18px;
   border-bottom: 1px solid rgba(255,255,255,0.3);
   padding-bottom: 5px;
  }
- .sidebar ul{
+ .leftside ul{
   list-style: none;
   margin-bottom: 25px;
  }
- .sidebar li{
+ .leftside li{
   margin: 8px 0;
   font-size: 14px;
  }
 
- /*Main*/
- .main{
+ /*rightside*/
+ .rightside{
   padding: 30px;
+  
+
  }
  .header{
   margin-bottom: 25px;
