@@ -79,7 +79,7 @@ body {
   color: #2c3e50;
   font-size: 28px;
  }
-.header p {
+.header pre {
   color: #555555;
   margin-top: 5px;
  }
@@ -93,6 +93,7 @@ body {
  }
  .section p{
   text-align: justify;
+  text-indent: 2em; /*абзац первой строки*/
  }
  .job{
   margin-bottom: 25px;
@@ -139,7 +140,7 @@ body {
   overflow-y: auto;/*вертик скролл*/
   overflow-x: auto;/*гориз. скролл*/
   /*перенос строк в блоке pre*/
- white-space: pre-wrap;
+  white-space: pre-wrap;
   word-break: break-word;
 }
 .kw{
