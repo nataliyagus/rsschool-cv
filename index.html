@@ -7,8 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <p>line bottom</p>
+    <header class="top_nav">
+        <nav class="navigate">
+                <a href="#About_myself">About myself</a>
+                <a href="#Work_blr">Work in Belarus</a>
+                <a href="#Work_pl">Work  in Poland</a>
+                <a href="#education">Education</a>
+                <a href="#education">Code example</a>
+        </nav>
+
     </header>
     <div class="cv-container">
         <!--left side-->
@@ -49,9 +56,8 @@
                 <h1>Nataliya Gusakova</h1>
             </div>
             <section class="section">
-                <h2>About myself</h2>
-                <p>
-                    I started interested in programming at school, it was when I began studying Paskal.
+                <h2 id="About_myself">About myself</h2>
+                <p> I started interested in programming at school, it was when I began studying Paskal.
 I continued my studies in college.  After it at BNTU's Department of Information Systems and Technologies.
 When I graduated from the university, I started my first job at GrSMU as a programmer in the Information technology department.
 Over the years of working in this position, I gained experience with accounting, training and personnel management programs. I was involved in updating the process of teaching students and managing their daily routine: a distance learning portal (edu.grsmu.by), an electronic library card and a pass system based on student cards.
@@ -62,14 +68,14 @@ After overviewing various schools and their curriculum, my choice fell on RS Sch
             </section>
 
             <section class="section">
-                <h2>Work Experience in Belarus</h2>
+                <h2 id="Work_blr">Work Experience in Belarus</h2>
                 <div class="job">
                     <h3>Grodno Stade Medical University</h3>
                     <span>programmer</span>
                     <p>feb 2011 - jan 2020</p>
                 </div>
 
-                <h2>Work Experience in Poland</h2>
+                <h2 id="Work_pl">Work Experience in Poland</h2>
 
                 <div class="job">
                     <h3>SP ZOO EcoCulture</h3>
@@ -85,7 +91,7 @@ After overviewing various schools and their curriculum, my choice fell on RS Sch
             </section>
 
             <section class="section">
-                <h2>Education</h2>
+                <h2 id="education">Education</h2>
                 <div class="job">
                     <h3>Belarusian National Technical University</h3>
                     <span>programmer</span>
@@ -96,13 +102,13 @@ After overviewing various schools and their curriculum, my choice fell on RS Sch
         </main>
 
     </div>
-    <footer>
-            <a href="https://github.com/nataliyagus/">Git Nataliya Gusakova</a>
-            <p>    2026    </p>
-            <a href="https://github.com/rolling-scopes-school/tasks/blob/master/tasks/cv/rs-school-logo.svg">
+    <footer class="footer">
+            <a href="https://github.com/nataliyagus">Nataliya Gusakova</a>
+            <p>2026</p>
+            <a href="https://rs.school">
                 <img class="logo" src="https://raw.githubusercontent.com/rolling-scopes-school/tasks/0b9490ff1b5493242c862130c81d9c9edaa16f8a/tasks/cv/rs-school-logo.svg" alt="Roling Scope School">
             </a>
-            <a href="https://app.rs.school/course/student/dashboard?course=js-fe-preschool-2026q1"> RS School. JS/Frontend Development Course. Preparatory Stage</a>
+            <a href="https://app.rs.school/course/student/dashboard?course=js-fe-preschool-2026q1"> RS School. JS/Frontend Development Course.</a>
 
         </footer>
 </body>

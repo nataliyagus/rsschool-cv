@@ -8,17 +8,32 @@
 body {
   background-color: #f4f6f8;
   padding: 40px;
+  max-width: 1200px;
+  place-content: center;
+}
+.top_nav{
+  background-color: #2c3e50;
+  box-shadow: 0 10px 25px #000000;
+  text-align: center;
+ }
+.top_nav a{
+  color: #ffffff;
+}
+.navigate{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+  margin-bottom: 20px;
+  padding: 15px;
+  margin: 15px 0;
 }
 
 .cv-container{
-  max-width: 900px;
   margin: auto;
   background: white;
   display: grid;
-  grid-template-columns: 300px lfr;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  display: flex;
-}
+  grid-template-columns: 300px 1fr;
+  box-shadow: 0 10px 25px #000000;
+  }
 /*leftside*/
 .leftside{
   background: #2c3e50;
@@ -35,6 +50,7 @@ body {
   margin-bottom: 20px;
   object-fit: cover; /*прячет лишее*/
   object-position: center;
+  box-shadow: 0 10px 25px #000000;
  }
  .leftside h2{
   margin-bottom: 10px;
@@ -54,7 +70,6 @@ body {
  /*rightside*/
  .rightside{
   padding: 30px;
-  
 
  }
  .header{
@@ -70,13 +85,17 @@ body {
  }
 .section h2{
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 1%;
+  margin-top: 20px;
   color: #2c3e50;
   border-bottom: 2px solid #eeeeee;
   padding-bottom: 5px;
  }
+ .section p{
+  text-align: justify;
+ }
  .job{
-  margin-bottom: 15px;
+  margin-bottom: 25px;
  }
  .job h3{
   font-size: 16px;
@@ -97,6 +116,21 @@ body {
   font-size: 13px;
  }
  .logo{
-  height: 50px;
+  height: 30px;
   width: auto;
+ }
+ .footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  margin-bottom: 20px;
+  padding: 15px;
+  margin: 15px 0;
+  background-color: #2c3e50;
+  box-shadow: 0 10px 25px #000000;
+  color: #ffffff;
+  text-align: center;
+
+ }
+ .footer a{
+  color: #ffffff;
  }
