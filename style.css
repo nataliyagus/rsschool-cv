@@ -104,21 +104,62 @@ body {
   font-size: 13px;
   color: #777777;
  }
- .skills{
+
+ /*блок кода*/
+.code_editor{
+  background: #2c3e50;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px #000000;
+  margin-top: 15px;
+}
+.editor_header{
+  background: #757575;
+  padding: 10px 15px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
- }
- .skill{
-  background: #ecf0f1;
-  padding: 6px 10px;
-  border-radius: 6px;
+
+  align-items: center;
+}
+.name_proc{
+  margin-left: 10px;
+  color: #CCCCCC;
   font-size: 13px;
- }
- .logo{
-  height: 30px;
-  width: auto;
- }
+  font-family: monospace;
+}
+.code{
+  margin: 0;
+  padding: 20px;
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #d4d4d4;
+  max-height: 300px;/*высота блока кода*/
+  max-width: 800px;
+  overflow-y: auto;/*вертик скролл*/
+  overflow-x: auto;/*гориз. скролл*/
+  /*перенос строк в блоке pre*/
+ white-space: pre-wrap;
+  word-break: break-word;
+}
+.kw{
+  color: #569cd6;
+  font-weight: bold;
+}
+.type{
+  color: #4ec9b0;
+}
+.func{
+  color: #e8e87b;
+}
+.str{
+  color: #e96430;
+}
+.num{
+  color: #6ce82a;
+}
+/*низ*/
+
  .footer{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr ;
@@ -133,4 +174,8 @@ body {
  }
  .footer a{
   color: #ffffff;
+ }
+ .logo{
+  height: 30px;
+  width: auto;
  }

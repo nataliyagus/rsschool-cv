@@ -13,7 +13,7 @@
                 <a href="#Work_blr">Work in Belarus</a>
                 <a href="#Work_pl">Work  in Poland</a>
                 <a href="#education">Education</a>
-                <a href="#education">Code example</a>
+                <a href="#code">Code example</a>
         </nav>
 
     </header>
@@ -96,8 +96,57 @@ After overviewing various schools and their curriculum, my choice fell on RS Sch
                     <h3>Belarusian National Technical University</h3>
                     <span>programmer</span>
                     <p>September 2005 - June 2010</p>
-                </div>
+
             </section>
+          <section class="section">
+                <h2 id="code">Code Examples</h2>
+                <div class="code_editor">
+                    <div class="editor_header">
+                        <span class="name_proc">Part of the program code for reading data from the electronic student ID card of GrSMU students</span>
+                    </div>
+                    <pre class="code">
+<span class="kw">procedure</span>  TForm1.Button1Click(Sender: TObject);
+<span class="kw">var</span>
+s,c,s1:<span class="type">string</span>;
+ch1,ch2:<span class="type">char</span>;
+n,i:<span class="type">integer</span>;
+<span class="kw">begin</span>
+    Edit1.Text:=Clipboard.AsText;
+    s:=Clipboard.AsText;
+    <span class="func">if</span> s<>''<span class="func"> then </span>
+               <span class="kw">begin</span>
+                    ch1:=s[<span class="num">1</span>];
+                    ch2:=s[<span class="num">2</span>];
+                    Label1.Caption:=ch1+ch2;
+                    <span class="func">if</span> (ch1='<span class="str">F</span>') and (ch2='<span class="str">F</span>')
+                         <span class="func"> then</span> <span class="kw">begin</span>
+                                n:=<span class="func"> HexToDec</span>(s);
+                                Edit2.Text:=<span class="func"> IntToStr</span>(n);
+                                Data.DataModule1.ADOQuery1.Close;
+                                Data.DataModule1.ADOQuery1.SQL.Text:='<span class="str"> select c.idchip, b.nomz from ez_cards c, photos ph, cards_student_v b </span>' + '<span class="str"> where ph.idperson=b.rowguid and ph.idphotos = c.idphotos and c.encodedate is not null </span>'+ '<span class="str">and c.idchip=</span>' + <span class="func">chr</span>(<span class="num">39</span>) + Edit2.Text + <span class="func">chr</span>(<span class="num">39</span>);
+                                data.DataModule1.ADOQuery1.open;
+                                <span class="func">if</span> data.DataModule1.ADOQuery1.FieldValues['nomz']>''<span class="func"> then</span>
+                                c:=data.DataModule1.ADOQuery1.FieldValues['<span class="str">nomz</span>']
+                                     <span class="func">else</span> <span class="kw">begin</span>
+                                            Data.DataModule1.ADOQuery1.Close;
+                                            data.DataModule1.ADOQuery1.SQL.Text:='<span class="str">select c.idchip, b.nomz from ez_cards c, photos ph, CARDS_SOTR_V b </span>' + '<span class="str">where ph.idperson=b.rowguid and ph.idphotos = c.idphotos and c.encodedate is not null</span>' + '<span class="str"> and c.idchip=</span>' + <span class="func">chr</span>(<span class="num">39</span>) + Edit2.Text + <span class="func">chr</span>(<span class="num">39</span>) ;
+                                            data.DataModule1.ADOQuery1.open;
+                                            <span class="func">if</span> data.DataModule1.ADOQuery1.FieldValues['<span class="str">nomz</span>']><span class="num">0</span> 
+                                             <span class="func">then</span>
+                                            c:=data.DataModule1.ADOQuery1.FieldValues['<span class="str">nomz</span>'];
+                                         <span class="kw">end</span>;
+                                s1:='';
+                                <span class="func">for</span> i:=<span class="num">1</span> <span class="func">to</span> <span class="func">Length</span>(c) <span class="func">do</span>
+                                    <span class="func">if</span> c[i]<>' ' <span class="func">then</span> s1:=s1+c[i];
+                                    <span class="func">if</span> c>'' <span class="func">then</span> Label2.Caption:=s1;
+                                Clipboard.AsText:=Label2.Caption ;
+                                Timer2.Enabled:=true;
+                           <span class="kw"> end</span>;
+                 <span class="kw">end</span>;
+ <span class="kw">end</span>;
+                    </pre>
+                </div>
+          </section>
 
         </main>
 
