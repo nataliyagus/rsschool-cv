@@ -10,6 +10,7 @@ body {
   padding: 40px;
   max-width: 1200px;
   place-content: center;
+  margin: auto;
 }
 .top_nav{
   background-color: #2c3e50;
