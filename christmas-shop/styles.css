@@ -1,0 +1,174 @@
+css
+* { margin: 0 0;
+    padding: 0 0;
+    box-sizing: border-box;
+}
+
+body {
+   
+}
+
+.container {
+
+    width: 1440px;          /* Точная ширина для >1440px */
+    margin: 0  0;
+    padding: 0 0;
+    background: rgb(103, 187, 64);      /* Белый фон контейнера */
+    /*background: #FFFFFF;*/
+
+
+}
+.header {
+    background: #ffffff; /*figma ffffff*/
+      height: 64px;
+      padding: 0 8px;
+      margin: 0 0;
+      align-items: center;
+
+
+}
+.menu{
+    width: 100%;
+    height: fit-content;
+    gap: 12px;
+    align-items: center;
+    /*padding: 12px 0;*/
+    margin: 0 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+}
+
+.logo-container {
+
+    display: flex;
+    justify-content: left;  /* горизонталь */
+    align-items: center;      /* вертикаль */
+    gap: 8px;              /* Отступ между иконкой и текстом */
+    padding: 8px 20px;     /* Top/Bottom 8, Left/Right 20 */
+    text-decoration: none; /* Убираем подчёркивание ссылки */
+    cursor: pointer; /* Курсор при наведении */
+    width: fit-content;
+    height: fit-content;
+    background: #FFFFFF;
+    border-radius: 12px;
+}
+.logo-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;        /* Иконка не сжимается */
+}
+.logo-text{
+    width: fit-content;
+    height: fit-content;
+    justify-content: left;  /* горизонталь */
+    align-items: top;      /* вертикаль */
+    color: #181C29;
+
+}
+
+.menu_item {
+
+    display: flex;
+    justify-content: left;
+    align-items: right;
+    padding: 12px 20px;     /* Top/Bottom 12, Left/Right 20 */
+
+}
+.item{
+    padding: 12px 20px;     /* Top/Bottom 12, Left/Right 20 */
+    transition: all 0.3s ease; /* Плавный переход */
+    border-radius: 12px;
+    text-decoration: none; /* Убираем подчёркивание ссылки */
+    color: #181C29;
+
+}
+.menu_item a:hover {
+    color: rgb(255, 70, 70);
+    background:rgba(255, 70, 70, 0.15) ;
+}
+
+
+
+
+
+
+
+
+.header1{
+    font-family: montserrat;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 18%;
+    text-transform: uppercase;
+
+}
+.header2{
+    font-family: montserrat;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 152%;
+    letter-spacing: 16%;
+    text-transform: uppercase;
+
+}
+.header3{
+    font-family: montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 152%;
+    letter-spacing: 8%;
+    text-transform: uppercase;
+
+}
+.header4{
+    font-family: montserrat;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 5%;
+    text-transform: uppercase;
+
+}
+.paragraph{
+    font-family: montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 148%;
+
+}
+.Action_large{
+    font-family: montserrat;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 152%;
+    letter-spacing: 16%;
+    text-transform: uppercase;
+
+}
+.Action_small{
+    font-family: montserrat;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 5%;
+    text-transform: uppercase;
+
+}
+.caption{
+    font-family: allura;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 5%;
+
+}
+.slider_text{
+    font-family: montserrat;
+    font-size: 80px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+}
