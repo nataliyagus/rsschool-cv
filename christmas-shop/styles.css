@@ -1324,6 +1324,333 @@ align-self: stretch;
 flex-grow: 0;
 
 }
+.cta_section{
+    /* CTA Sectoin */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+
+width: 1440px;
+height: 668px;
+
+background: url(image/bg-snow.png), url(image/bg-forest.png), #FF4646;
+background-size: 100%, 100%, cover;
+ background-repeat: no-repeat;
+ background-position: center;
+border-radius: 0px 0px 20px 20px;
+
+
+
+}
+
+.cta_container{
+    /* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 60px 0px;
+
+width: 1276px;
+max-width: 1276px;
+height: 548px;
+
+border-radius: 20px;
+
+
+
+}
+
+.cta_action{
+    /* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 60px 0px;
+gap: 20px;
+
+width: 426px;
+max-width: 426px;
+height: 428px;
+
+
+
+
+}
+
+.cta_header{
+   /* Header 2 */
+
+width: 426px;
+height: 108px;
+
+color: #FFFFFF;
+text-align: center;
+
+
+}
+.cta_button{
+    /* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+/*padding: 20px 32px;*/
+width: 235px;
+height: 56px;
+
+background: #181C29;
+border-radius: 20px;
+  cursor: pointer; /* Лучше чем hand */
+  transition: background-color 0.3s ease; /* Плавный фон */
+
+
+}
+.cta_button_text {
+   /* Action Small */
+display: inline-block;
+  padding: 15px 30px;
+width: 171px;
+height: 16px;
+text-decoration: none;
+
+/* Action Small */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 130%;
+/* identical to box height, or 16px */
+text-align: center;
+text-transform: uppercase;
+
+color: #FFFFFF;
+
+}
+.cta_button:hover .cta_button_text {
+  background-color: #FFFFFF !important;
+  color: #181C29 !important;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 235px;
+height: 26px;
+  padding: 15px 30px;
+}
+
+.cta_time_container{
+    /* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 8px;
+
+width: 426px;
+height: 104px;
+
+
+
+}
+
+.cta_time_caption{
+    /* Caption */
+
+width: 426px;
+height: 24px;
+
+color: #FFFFFF;
+text-align: center;
+
+}
+.cta_timer{
+    /* Timer */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 8px 12px 12px;
+
+width: 344px;
+height: 72px;
+
+background: rgba(255, 255, 255, 0.4);
+border-radius: 20px;
+
+}
+
+.cta_days_container{
+    /* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+
+width: 80px;
+height: 52px;
+
+
+}
+
+.cta_days{
+/* Header 2 */
+
+width: 80px;
+height: 36px;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+}
+.cta_days_t{
+    /* Header 4 */
+
+width: 80px;
+height: 16px;
+text-align: center;
+color: #FFFFFF;
+
+
+}
+
+.separator{
+    /* Separator */
+
+width: 20px;
+height: 0px;
+
+border: 1px solid rgba(255, 255, 255, 0.4);
+transform: rotate(-90deg);
+
+
+}
+.cta_hours_container{
+    /* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+
+width: 80px;
+height: 52px;
+
+
+
+}
+.cta_hours{
+/* Header 2 */
+
+width: 80px;
+height: 36px;
+text-align: center;
+color: #FFFFFF;
+
+
+
+}
+.cta_hours_t{
+    /* Header 4 */
+
+width: 80px;
+height: 16px;
+text-align: center;
+color: #FFFFFF;
+
+
+
+
+}
+
+.cta_minutes_container{
+    /* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+
+width: 80px;
+height: 52px;
+
+
+}
+.cta_minutes{
+/* Header 2 */
+
+width: 80px;
+height: 36px;
+text-align: center;
+color: #FFFFFF;
+
+
+
+}
+.cta_minutes_t{
+    /* Header 4 */
+
+width: 80px;
+height: 16px;
+text-align: center;
+color: #FFFFFF;
+
+
+}
+
+.cta_seconds_container{
+    /* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+
+width: 80px;
+height: 52px;
+
+
+}
+.cta_seconds{
+/* Header 2 */
+
+width: 80px;
+height: 36px;
+text-align: center;
+color: #FFFFFF;
+
+
+
+}
+.cta_seconds_t{
+    /* Header 4 */
+
+width: 80px;
+height: 16px;
+text-align: center;
+color: #FFFFFF;
+
+
+
+}
+
+
 
 
 
