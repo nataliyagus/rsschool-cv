@@ -1,0 +1,183 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
+  padding: 40px;
+  max-width: 1200px;
+  place-content: center;
+  margin: auto;
+}
+.top_nav{
+  background-color: #2c3e50;
+  box-shadow: 0 10px 25px #000000;
+  text-align: center;
+ }
+.top_nav a{
+  color: #ffffff;
+}
+.navigate{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+  margin-bottom: 20px;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.cv-container{
+  margin: auto;
+  background: white;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  box-shadow: 0 10px 25px #000000;
+  }
+/*leftside*/
+.leftside{
+  background: #2c3e50;
+  color: #ffffff;
+  padding: 30px;
+}
+
+.profile-photo{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #CCCCCC;
+  margin: auto;
+  margin-bottom: 20px;
+  object-fit: cover; /*прячет лишее*/
+  object-position: center;
+  box-shadow: 0 10px 25px #000000;
+ }
+ .leftside h2{
+  margin-bottom: 10px;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 5px;
+ }
+ .leftside ul{
+  list-style: none;
+  margin-bottom: 25px;
+ }
+ .leftside li{
+  margin: 8px 0;
+  font-size: 14px;
+ }
+
+ /*rightside*/
+ .rightside{
+  padding: 30px;
+
+ }
+ .header{
+  margin-bottom: 25px;
+ }
+.header h1 {
+  color: #2c3e50;
+  font-size: 28px;
+ }
+.header pre {
+  color: #555555;
+  margin-top: 5px;
+ }
+.section h2{
+  font-size: 20px;
+  margin-bottom: 1%;
+  margin-top: 20px;
+  color: #2c3e50;
+  border-bottom: 2px solid #eeeeee;
+  padding-bottom: 5px;
+ }
+ .section p{
+  text-align: justify;
+  text-indent: 2em; /*абзац первой строки*/
+ }
+ .job{
+  margin-bottom: 25px;
+ }
+ .job h3{
+  font-size: 16px;
+ }
+ .job span{
+  font-size: 13px;
+  color: #777777;
+ }
+
+ /*блок кода*/
+.code_editor{
+  background: #2c3e50;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px #000000;
+  margin-top: 15px;
+}
+.editor_header{
+  background: #757575;
+  padding: 10px 15px;
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+}
+.name_proc{
+  margin-left: 10px;
+  color: #CCCCCC;
+  font-size: 13px;
+  font-family: monospace;
+}
+.code{
+  margin: 0;
+  padding: 20px;
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #d4d4d4;
+  max-height: 300px;/*высота блока кода*/
+  max-width: 800px;
+  overflow-y: auto;/*вертик скролл*/
+  overflow-x: auto;/*гориз. скролл*/
+  /*перенос строк в блоке pre*/
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.kw{
+  color: #569cd6;
+  font-weight: bold;
+}
+.type{
+  color: #4ec9b0;
+}
+.func{
+  color: #e8e87b;
+}
+.str{
+  color: #e96430;
+}
+.num{
+  color: #6ce82a;
+}
+/*низ*/
+
+ .footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  margin-bottom: 20px;
+  padding: 15px;
+  margin: 15px 0;
+  background-color: #2c3e50;
+  box-shadow: 0 10px 25px #000000;
+  color: #ffffff;
+  text-align: center;
+
+ }
+ .footer a{
+  color: #ffffff;
+ }
+ .logo{
+  height: 30px;
+  width: auto;
+ }

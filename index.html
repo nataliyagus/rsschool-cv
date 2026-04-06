@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Nataliya Gusakova</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top_nav">
+        <nav class="navigate">
+                <a href="#About_myself">About myself</a>
+                <a href="#Work_blr">Work in Belarus</a>
+                <a href="#Work_pl">Work  in Poland</a>
+                <a href="#education">Education</a>
+                <a href="#code">Code example</a>
+        </nav>
+
+    </header>
+    <div class="cv-container">
+        <!--left side-->
+        <aside class="leftside">
+            <div>
+                <img class="profile-photo" src="photo.jpg" alt="photo Nataliya Gusakova">
+            </div>
+            <h2>Contacts</h2>
+            <ul>
+                <li>phone: +48 795 009 738</li>
+                <li>Viber: +48 795 009 738</li>
+                <li>WhatsApp +48 795 009 738</li>
+                <li>Telegram +48 795 009 738</li>
+                <li>Email: gusakovanataliya85@gmail.com</li>
+            </ul>
+            <h2>Tech Skills</h2>
+            <ul>
+                <li>HTML5</li>
+                <li>css</li>
+                <li>GIT</li>
+                <li>SQL</li>
+                <li>Pascal (Delphi)</li>
+                <li>C++</li>
+                <li>FoxPro</li>
+                <li>VisualBasic</li>
+            </ul>
+            <h2>Languages</h2>
+            <ul>
+                <li>Russian - C1</li>
+                <li>English - A2</li>
+                <li>Polish - B1</li>
+            </ul>
+        </aside>
+        <!--right side-->
+
+        <main class="rightside">
+            <div class="header">
+                <h1>Nataliya Gusakova</h1>
+            </div>
+            <section class="section">
+                <h2 id="About_myself">About myself</h2>
+                <p >   I started interested in programming at school, it was when I began studying Paskal.
+I continued my studies in college.  After it at BNTU's Department of Information Systems and Technologies.
+When I graduated from the university, I started my first job at GrSMU as a programmer in the Information technology department.
+Over the years of working in this position, I gained experience with accounting, training and personnel management programs. I was involved in updating the process of teaching students and managing their daily routine: a distance learning portal (edu.grsmu.by), an electronic library card and a pass system based on student cards.
+Every time when I got acquainted with new technologies and introduce them to the university's everyday life, I discovered a lot of new things, every day I learned and developed something new.
+I've always been passionate about learning and using all this knowledge in practice. So it's time to learn something new, something really useful nowadays and I've decided to start learning Javascript. Because so far it was a very practical and useful tool and looks like it will be in the nearest future. 
+After overviewing various schools and their curriculum, my choice fell on RS School. I'll be glad to become one of your students.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 id="Work_blr">Work Experience in Belarus</h2>
+                <div class="job">
+                    <h3>Grodno Stade Medical University</h3>
+                    <span>programmer</span>
+                    <p>feb 2011 - jan 2020</p>
+                </div>
+
+                <h2 id="Work_pl">Work Experience in Poland</h2>
+
+                <div class="job">
+                    <h3>SP ZOO EcoCulture</h3>
+                    <span>office manager</span>
+                    <p>2023 - 2024</p>
+                </div>
+
+                <div class="job">
+                    <h3>NextCom Logistic</h3>
+                    <span>warehouse worker</span>
+                    <p>jun - dec 2025</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 id="education">Education</h2>
+                <div class="job">
+                    <h3>Belarusian National Technical University</h3>
+                    <span>programmer</span>
+                    <p>September 2005 - June 2010</p>
+                </div>
+            </section>
+          <section class="section">
+                <h2 id="code">Code Examples</h2>
+                <div class="code_editor">
+                    <div class="editor_header">
+                        <span class="name_proc">Part of the program code for reading data from the electronic student ID card of GrSMU students</span>
+                    </div>
+                    <pre class="code">
+<span class="kw">procedure</span>  TForm1.Button1Click(Sender: TObject);
+<span class="kw">var</span>
+s,c,s1:<span class="type">string</span>;
+ch1,ch2:<span class="type">char</span>;
+n,i:<span class="type">integer</span>;
+<span class="kw">begin</span>
+    Edit1.Text:=Clipboard.AsText;
+    s:=Clipboard.AsText;
+    <span class="func">if</span> s &lt; &gt; '' <span class="func"> then </span>
+               <span class="kw">begin</span>
+                    ch1:=s[<span class="num">1</span>];
+                    ch2:=s[<span class="num">2</span>];
+                    Label1.Caption:=ch1+ch2;
+                    <span class="func">if</span> (ch1='<span class="str">F</span>') and (ch2='<span class="str">F</span>')
+                         <span class="func"> then</span> <span class="kw">begin</span>
+                                n:=<span class="func"> HexToDec</span>(s);
+                                Edit2.Text:=<span class="func"> IntToStr</span>(n);
+                                Data.DataModule1.ADOQuery1.Close;
+                                Data.DataModule1.ADOQuery1.SQL.Text:='<span class="str"> select c.idchip, b.nomz from ez_cards c, photos ph, cards_student_v b </span>' + '<span class="str"> where ph.idperson=b.rowguid and ph.idphotos = c.idphotos and c.encodedate is not null </span>'+ '<span class="str">and c.idchip=</span>' + <span class="func">chr</span>(<span class="num">39</span>) + Edit2.Text + <span class="func">chr</span>(<span class="num">39</span>);
+                                data.DataModule1.ADOQuery1.open;
+                                <span class="func">if</span> data.DataModule1.ADOQuery1.FieldValues['nomz']>''<span class="func"> then</span>
+                                c:=data.DataModule1.ADOQuery1.FieldValues['<span class="str">nomz</span>']
+                                     <span class="func">else</span> <span class="kw">begin</span>
+                                            Data.DataModule1.ADOQuery1.Close;
+                                            data.DataModule1.ADOQuery1.SQL.Text:='<span class="str">select c.idchip, b.nomz from ez_cards c, photos ph, CARDS_SOTR_V b </span>' + '<span class="str">where ph.idperson=b.rowguid and ph.idphotos = c.idphotos and c.encodedate is not null</span>' + '<span class="str"> and c.idchip=</span>' + <span class="func">chr</span>(<span class="num">39</span>) + Edit2.Text + <span class="func">chr</span>(<span class="num">39</span>) ;
+                                            data.DataModule1.ADOQuery1.open;
+                                            <span class="func">if</span> data.DataModule1.ADOQuery1.FieldValues['<span class="str">nomz</span>']><span class="num">0</span>
+                                             <span class="func">then</span>
+                                            c:=data.DataModule1.ADOQuery1.FieldValues['<span class="str">nomz</span>'];
+                                         <span class="kw">end</span>;
+                                s1:='';
+                                <span class="func">for</span> i:=<span class="num">1</span> <span class="func">to</span> <span class="func">Length</span>(c) <span class="func">do</span>
+                                    <span class="func">if</span> c[i]&lt; &gt; '' <span class="func">then</span> s1:=s1+c[i];
+                                    <span class="func">if</span> c&lt;'' <span class="func">then</span> Label2.Caption:=s1;
+                                Clipboard.AsText:=Label2.Caption ;
+                                Timer2.Enabled:=true;
+                           <span class="kw"> end</span>;
+                 <span class="kw">end</span>;
+ <span class="kw">end</span>;
+                    </pre>
+                </div>
+          </section>
+
+        </main>
+
+    </div>
+    <footer class="footer">
+            <a href="https://github.com/nataliyagus">Nataliya Gusakova</a>
+            <p>2026</p>
+            <a href="https://rs.school">
+                <img class="logo" src="https://raw.githubusercontent.com/rolling-scopes-school/tasks/0b9490ff1b5493242c862130c81d9c9edaa16f8a/tasks/cv/rs-school-logo.svg" alt="Roling Scope School">
+            </a>
+            <a href="https://rs.school/courses/javascript-preschool-ru"> JS / Front-end Pre-school RU Course</a>
+
+        </footer>
+</body>
+</html>
