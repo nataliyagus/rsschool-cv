@@ -1,17 +1,36 @@
 css
-* { margin: 0 0;
-    padding: 0 0;
 
+* { margin: 0 auto;
+    padding: 0 0;
+}
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+html {
+    line-height: 1.15; /*ширина строки 115% от шрифта*/
+    text-size-adjust: 100%; /*не масштабировать текст*/
+    tab-size: 4; /*табуляция равна 4 пробелам*/
 }
 
 body {
    
 }
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+section {
+    display: block;
+    unicode-bidi: isolate;
+}
 
 .container {
 
     width: 1440px;          /* Точная ширина для >1440px */
-    margin: 0  0;
+    margin: 0  auto;
     padding: 0 0;
      /* Белый фон контейнера */
   background: #FFFFFF;
@@ -22,7 +41,7 @@ body {
     background: #ffffff; /*figma ffffff*/
       height: 64px;
       padding: 0 8px;
-      margin: 0 0;
+      margin: 0 auto;
       align-items: center;
 
 
@@ -33,7 +52,7 @@ body {
     gap: 12px;
     align-items: center;
     /*padding: 12px 0;*/
-    margin: 0 0;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -53,6 +72,7 @@ body {
     height: fit-content;
     background: #FFFFFF;
     border-radius: 12px;
+
 }
 .logo-icon {
     width: 24px;
@@ -89,35 +109,44 @@ body {
     background:rgba(255, 70, 70, 0.15) ;
 }
 .Herro_section{
-    margin: 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 8px 0px 0px;
-    height: 524px;
-    background: url(image/bg-ball.png), url(image/bg-snow.png), #FF4646;
-    border-radius: 20px 20px 0px 0px;
-    background-size: 100%, 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center ;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 60px 8px 0 0;
+
+width: 1440px;
+height: 524px;
+
+background: url(image/bg-ball.png), url(image/bg-snow.png), #FF4646;
+background-size: 100%, 100% 100%;
+border-radius: 20px 20px 0px 0px;
+margin: 0 auto;
+
+
+  
 }
 .herro_container{
-    gap: 12px;
-    padding: 60px 0px 0px 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 426px;
-    max-width: 426px;
-    height: 404px;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 60px 0px;
+gap: 12px;
+
+width: 426px;
+max-width: 426px;
+height: 404px;
+margin: 0 auto;
+color: rgb(255, 255, 255);
 
 
 }
 
 .herro_mc{
-    position: absolute;     /* слои лежат поверх контента */
-    z-index: 1;
+  /*  position: absolute;     /* слои лежат поверх контента */
+   /* z-index: 1;
 
     padding: 0px 0px;
     margin: auto;
@@ -125,46 +154,82 @@ body {
     width: 426px;
     max-width: 426px;
     height: 24px;
-    text-align: center;
+    text-align: center;*/
+/* Caption */
+
+width: 426px;
+height: 24px;
+
+/* Caption */
+font-family: 'Allura';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 100%;
+/* identical to box height, or 24px */
+text-align: center;
+letter-spacing: 0.05em;
+
+color: #FFFFFF;
+
 
 
 }
 .herro_header{
 
-    position: absolute;
+   /* position: absolute;
     z-index: 2;
     padding: 36px 0px;
     color: #FFFFFF;
     height: 144px;
     max-width: 426px;
-    width: 426px;
+    width: 426px;*/
+    /* Header 1 */
+
+width: 426px;
+height: 144px;
+
+/* Header 1 */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 150%;
+/* or 48px */
+text-align: center;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+
+color: #FFFFFF;
+
 
 }
 
 .herro_button{
-  /*  justify-content: center;*/
-    position: absolute;
-    z-index: 3;
-    padding: 20px 32px;
-    margin: 190px 0;
-    color: #FFFFFF;
-    height: 56px;
-    width: 235px;
-    background: #181C29;
-    border-radius: 20px;
-    text-align: center;
- height: fit-content;
- cursor: hand;
+ /* Button */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0 20px 0 32px  ;
+width: 235px;
+height: 56px;
+background: #181C29;
+border-radius: 20px;
+color: #FFFFFF;
+transition: all 0.3s ease; /* Плавный переход */
+
 
 }
 .herro_button:hover {
     color: #181C29;
-    background:#ffffff ;
-    cursor: hand;
+    background-color:#ffffff ;
+    cursor: pointer;
 }
 .herro_hny{
-     position: absolute;     /* слои лежат поверх контента */
-    z-index: 1;
+   /*  position: absolute;     /* слои лежат поверх контента */
+   /* z-index: 1;
 
     padding: 260px 0px;
     margin: auto;
@@ -172,8 +237,14 @@ body {
     width: 426px;
     max-width: 426px;
     height: 24px;
-    text-align: center;
+    text-align: center;*/
+/* Hero Section */
+/* Caption */
 
+width: 426px;
+height: 24px;
+text-align: center;
+color: #FFFFFF;
 
 }
 /*About Section*/
@@ -189,6 +260,7 @@ max-width: 1440px;
 height: 648px;
 background: url(image/bg-snow.png), #FF4646;
 border-radius: 0px;
+margin: 0 auto;
 
 
 }
@@ -209,6 +281,7 @@ border-radius: 20px;
 flex: none;
 order: 0;
 flex-grow: 1;
+margin: 0 auto;
 }
 
 .text_container{
@@ -298,7 +371,6 @@ flex-grow: 0;
 
 /* Image Container */
 
-/* Auto layout */
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -309,11 +381,6 @@ width: 638px;
 height: 528px;
 
 
-
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 1;
 
 
 }
@@ -323,72 +390,51 @@ flex-grow: 1;
 
 width: 638px;
 height: 528px;
-
 background: url(image/santa.png);
 border-radius: 20px;
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
 
 }
-    /* Slider Section */
+
+/* Slider Section */
+
 .slider_section{
-/* Auto layout */
 display: flex;
 flex-direction: column;
 align-items: center;
-/*padding: 60px 8px;*/
-width: 1440px;
+padding: 60px 0px;
+max-width: 1440px;
 height: 488px;
 background: url(image/bg-snow.png), #FF4646;
-/* Inside auto layout */
-flex: none;
-order: 3;
-align-self: stretch;
-flex-grow: 0;
+margin: 0 auto;
+overflow: hidden;
 
 }
 
 
 .slider_container{
     /* Container */
-
-/* Auto layout */
 display: flex;
 flex-direction: column;
 align-items: center;
 padding: 0px;
 gap: 20px;
-
-width: 1276px;
 max-width: 1276px;
 height: 368px;
+margin: 0 auto;
 
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
 }
 .slider_caption{
    /* Container */
 
-/* Auto layout */
 display: flex;
 flex-direction: column;
 align-items: center;
 padding: 0px 0px  20px 0;
 gap: 12px;
-width: 426px;
+/*width: 426px;
 max-width: 426px;
-height: 72px;
-/* Inside auto layout */
-flex: none;
-order: 0;
-/*lign-self: stretch;*/
-flex-grow: 0;
+height: 72px;*/
+
 
 }
 
@@ -398,11 +444,7 @@ width: 426px;
 height: 24px;
 text-align: center;
 color: #FFFFFF;
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
+
 
 }
 .slider_header{
@@ -412,32 +454,20 @@ width: 426px;
 height: 36px;
 text-align: center;
 color: #FFFFFF;
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
+
 
 }
 .slider_row{
     /* Row */
 
-/* Auto layout */
 display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-padding: 0px;
-
-width: 1276px;
+/*flex-direction: column;*/
+/*justify-content: center;*/
+align-items: center;
+/*padding: 0px;*/
+max-width: 1276px;
 height: 200px;
-
-
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
+margin: 0 auto;
 
 }
 
@@ -451,14 +481,10 @@ align-items: center;
 padding: 0px;
 gap: 20px;
 
-width: 1993px;
+max-width: 1993px;
+
 height: 200px;
 
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
 
 }
 
@@ -467,10 +493,7 @@ flex-grow: 0;
 width: 184px;
 height: 98px;
 color: #FFFFFF;
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
+
 
 }
 
@@ -489,10 +512,6 @@ height: 200px;
 
 border-radius: 20px;
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
 
 }
 
@@ -512,10 +531,6 @@ height: 200px;
 
 border-radius: 20px;
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
 
 }
 
@@ -524,10 +539,7 @@ flex-grow: 0;
 width: 330px;
 height: 98px;
 color: #FFFFFF;
-/* Inside auto layout */
-flex: none;
-order: 2;
-flex-grow: 0;
+
 
 }
 .row_item4{
@@ -544,11 +556,6 @@ width: 200px;
 height: 200px;
 
 border-radius: 20px;
-
-/* Inside auto layout */
-flex: none;
-order: 3;
-flex-grow: 0;
 
 
 }
@@ -567,10 +574,6 @@ height: 200px;
 
 border-radius: 20px;
 
-/* Inside auto layout */
-flex: none;
-order: 3;
-flex-grow: 0;
 
 }
 .row_item5{
@@ -580,10 +583,7 @@ width: 224px;
 height: 98px;
 
 color: #FFFFFF;
-/* Inside auto layout */
-flex: none;
-order: 4;
-flex-grow: 0;
+
 
 }
 .row_item6{
@@ -601,10 +601,6 @@ height: 200px;
 
 border-radius: 20px;
 
-/* Inside auto layout */
-flex: none;
-order: 5;
-flex-grow: 0;
 
 }
 .item6_img{
@@ -622,11 +618,6 @@ height: 200px;
 
 border-radius: 20px;
 
-/* Inside auto layout */
-flex: none;
-order: 5;
-flex-grow: 0;
-
 }
 .row_item7{
     /* Slider Text */
@@ -634,12 +625,6 @@ flex-grow: 0;
 width: 315px;
 height: 98px;
 color: #FFFFFF;
-
-
-/* Inside auto layout */
-flex: none;
-order: 6;
-flex-grow: 0;
 
 }
 .row_item8{
@@ -657,11 +642,6 @@ height: 200px;
 
 border-radius: 20px;
 
-/* Inside auto layout */
-flex: none;
-order: 7;
-flex-grow: 0;
-
 }
 .item8_img{
     /* Image Container */
@@ -678,10 +658,6 @@ height: 200px;
 
 border-radius: 20px;
 
-/* Inside auto layout */
-flex: none;
-order: 7;
-flex-grow: 0;
 
 }
 
@@ -698,13 +674,9 @@ gap: 20px;
 
 width: 1276px;
 height: 56px;
+margin: 0 auto;
 
 
-/* Inside auto layout */
-flex: none;
-order: 2;
-align-self: stretch;
-flex-grow: 0;
 
 }
     /* Button */
@@ -723,14 +695,11 @@ padding: 0px;
 
 width: 56px;
 height: 56px;
-
+background-color: #FF4646;
 border: 1px solid rgba(255, 255, 255);
 border-radius: 20px;
+transition: all 0.3s ease; /* Плавный переход */
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
 
 }
 
@@ -749,26 +718,22 @@ padding: 0px;
 
 width: 56px;
 height: 56px;
-
+background-color: #FF4646;
 border: 1px solid #FFFFFF;
 border-radius: 20px;
-
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
+transition: all 0.3s ease; /* Плавный переход */
 
 }
 .slider_button_l:hover{
     background: #FFFFFF;
     color: #FF4646;
-    cursor: hand;
+    cursor: pointer;
 }
 
 .slider_button_r:hover{
     background: #FFFFFF;
     color: #FF4646;
-    cursor: hand;
+    cursor: pointer;
 }
 
 .best_gift_section{
@@ -777,18 +742,12 @@ flex-grow: 0;
 display: flex;
 flex-direction: column;
 align-items: center;
-/*padding: 60px 8px;*/
+padding: 60px 0 8px 0;
 width: 1440px;
 height: 554px;
-
 background: url(image/bg-snow.png), #FF4646;
-
-/* Inside auto layout */
-flex: none;
-order: 4;
-align-self: stretch;
-flex-grow: 0;
-
+margin: 0 auto;
+max-width: 1440px;
 }
 
 .best_gift_container{
@@ -798,17 +757,14 @@ flex-grow: 0;
 display: flex;
 flex-direction: column;
 align-items: center;
-padding: 0 0px 0 60px;
+/*padding: 0 0px 0 60px;*/
 gap: 20px;
 width: 1276px;
 max-width: 1276px;
 height: 434px;
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
+margin: 0 auto;
+
 }
 
 .best_gift_caption{
@@ -824,10 +780,6 @@ width: 426px;
 max-width: 426px;
 height: 72px;
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
 }
 
 .best_gift_caption_bg{
@@ -837,11 +789,6 @@ height: 24px;
 text-align: center;
 color: #FFFFFF;
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
 }
 
 .best_gift_header{
@@ -851,11 +798,7 @@ width: 426px;
 height: 36px;
 color: #FFFFFF;
 text-align: center;
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
+
 }
 
 .best_gift_cards{
@@ -870,16 +813,10 @@ align-items: flex-start;
 align-content: center;
 padding: 0px;
 gap: 12px;
-
 width: 1276px;
 height: 342px;
-
-
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
+margin: 0 auto;
+max-width: 1276px;
 
 }
 
@@ -898,10 +835,6 @@ height: 342px;
 background: #ECF3F8;
 border-radius: 20px;
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
 
 }
 .best_gift_card1_img{
@@ -917,12 +850,6 @@ padding: 0px;
 width: 310px;
 height: 230px;
 
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
 }
 
 .card_img1{
@@ -933,16 +860,10 @@ height: 230px;
 
 background: url(image/gift-for-work.png);
 background-size: contain;
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 1;
 
 }
 
 .card_text_container1{
-   
 /* Container */
 
 /* Auto layout */
@@ -958,11 +879,6 @@ height: 112px;
 background: #FFFFFF;
 border-radius: 20px;
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 1;
 }
 
 .card_header1{
@@ -971,10 +887,8 @@ padding: 0 0  0 20px ;
 width: 76px;
 height: 16px;
 color: #4361FF;
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
+margin: 0;
+
  }
 
 .card_text1{
@@ -982,12 +896,8 @@ flex-grow: 0;
 width: 270px;
 height: 24px;
 color: #181C29;
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
 padding: 0 0  0 20px ;
+margin: 0;
 }
 
 
@@ -1006,12 +916,6 @@ height: 342px;
 background: #ECF3F8;
 border-radius: 20px;
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
-
-
 }
 .best_gift_card2_img{
  /* image */
@@ -1020,12 +924,6 @@ width: 310px;
 height: 230px;
 
 background: url(gift-for-health.png);
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 1;
 
 }
 
@@ -1038,11 +936,6 @@ height: 230px;
 background: url(image/gift-for-health.png);
 background-size: contain;
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 1;
 
 }
 .card_text_container2{
@@ -1060,11 +953,7 @@ height: 112px;
 background: #FFFFFF;
 border-radius: 20px;
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 1;
+
 
 }
 
@@ -1075,12 +964,7 @@ width: 86px;
 height: 16px;
 padding: 0 0  0 20px ;
 color: #06A44F;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
+margin: 0;
 
 
  }
@@ -1092,13 +976,8 @@ width: 270px;
 height: 24px;
 padding: 0 0  0 20px ;
 color: #181C29;
+margin: 0;
 
-
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
 
 
 }
@@ -1118,10 +997,6 @@ height: 342px;
 background: #ECF3F8;
 border-radius: 20px;
 
-/* Inside auto layout */
-flex: none;
-order: 2;
-flex-grow: 0;
 
 }
 .best_gift_card3_img{
@@ -1138,11 +1013,6 @@ width: 310px;
 height: 230px;
 
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
 }
 
 .card_img3{
@@ -1154,11 +1024,6 @@ height: 230px;
 background: url(image/gift-for-work.png);
 background-size: contain;
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 1;
 
 }
 .card_text_container3{
@@ -1176,12 +1041,6 @@ height: 112px;
 background: #FFFFFF;
 border-radius: 20px;
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 1;
-
 }
 .card_header3{
 /* Header 4 */
@@ -1189,10 +1048,7 @@ padding: 0 0  0 20px ;
 width: 76px;
 height: 16px;
 color: #4361FF;
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
+margin: 0;
 
  }
 
@@ -1203,12 +1059,8 @@ width: 270px;
 height: 24px;
 padding: 0 0  0 20px ;
 color: #181C29;
+margin: 0;
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
 
 }
 
@@ -1227,10 +1079,6 @@ height: 342px;
 background: #ECF3F8;
 border-radius: 20px;
 
-/* Inside auto layout */
-flex: none;
-order: 3;
-flex-grow: 0;
 
 }
 .best_gift_card4_img{
@@ -1246,12 +1094,6 @@ padding: 0px;
 width: 310px;
 height: 230px;
 
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
 }
 
 .card_img4{
@@ -1263,12 +1105,7 @@ height: 230px;
 background: url(image/gift-for-harmony.png);
 background-size: contain;
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 1;
-   
+
 }
 .card_text_container4{
 /* Container */
@@ -1286,11 +1123,6 @@ height: 112px;
 background: #FFFFFF;
 border-radius: 20px;
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 1;
 
 
 }
@@ -1302,39 +1134,35 @@ width: 103px;
 height: 16px;
 padding: 0 0  0 20px ;
 color: #FF43F7;
+margin: 0;
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
 
  }
 
 .card_text4{
- padding: 0 0  0 20px ;
 /* Header 3 */
-width: 270px;
-height: 48px;
-color: #181C29;
 
-/* Inside auto layout */
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
+width: fit-content;
+height: fit-content;
+padding: 0 0  0 20px ;
+color: #181C29;
+margin: 0;
+
+
+
 
 }
-.cta_section{
     /* CTA Sectoin */
+.cta_section{
 
 /* Auto layout */
 display: flex;
 flex-direction: column;
 align-items: center;
-
 width: 1440px;
 height: 668px;
-
+max-width: 1440px;
+margin: 0 auto;
 background: url(image/bg-snow.png), url(image/bg-forest.png), #FF4646;
 background-size: 100%, 100%, cover;
  background-repeat: no-repeat;
@@ -1365,7 +1193,7 @@ border-radius: 20px;
 }
 
 .cta_action{
-    /* Container */
+ /* Container */
 
 /* Auto layout */
 display: flex;
@@ -1392,62 +1220,56 @@ height: 108px;
 
 color: #FFFFFF;
 text-align: center;
+margin: 0;
 
 
 }
 .cta_button{
-    /* Button */
 
-/* Auto layout */
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
 /*padding: 20px 32px;*/
 width: 235px;
 height: 56px;
-
 background: #181C29;
 border-radius: 20px;
+color:#FFFFFF;
   cursor: pointer; /* Лучше чем hand */
   transition: background-color 0.3s ease; /* Плавный фон */
 
 
 }
-.cta_button_text {
+/*.cta_button_text {
    /* Action Small */
-display: inline-block;
+/*display: inline-block;
   padding: 15px 30px;
 width: 171px;
 height: 16px;
 text-decoration: none;
 
-/* Action Small */
+
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 600;
 font-size: 12px;
 line-height: 130%;
 /* identical to box height, or 16px */
-text-align: center;
+/*text-align: center;
 text-transform: uppercase;
 
 color: #FFFFFF;
 
-}
-.cta_button:hover .cta_button_text {
+}*/
+.cta_button:hover {
   background-color: #FFFFFF !important;
   color: #181C29 !important;
     cursor: pointer;
     border-radius: 20px;
     width: 235px;
-height: 26px;
-  padding: 15px 30px;
+   height: 56px;
+ /* padding: 15px 30px;*/
 }
 
 .cta_time_container{
     /* Container */
-
 /* Auto layout */
 display: flex;
 flex-direction: column;
@@ -1459,15 +1281,12 @@ width: 426px;
 height: 104px;
 
 
-
 }
 
 .cta_time_caption{
     /* Caption */
-
 width: 426px;
 height: 24px;
-
 color: #FFFFFF;
 text-align: center;
 
@@ -1500,6 +1319,8 @@ padding: 0px;
 
 width: 80px;
 height: 52px;
+margin: 0;
+
 
 
 }
@@ -1512,7 +1333,7 @@ height: 36px;
 text-align: center;
 
 color: #FFFFFF;
-
+margin: 0;
 
 
 }
@@ -1523,7 +1344,7 @@ width: 80px;
 height: 16px;
 text-align: center;
 color: #FFFFFF;
-
+margin: 0;
 
 }
 
@@ -1546,7 +1367,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 padding: 0px;
-
+margin: 0;
 width: 80px;
 height: 52px;
 
@@ -1560,7 +1381,7 @@ width: 80px;
 height: 36px;
 text-align: center;
 color: #FFFFFF;
-
+margin: 0;
 
 
 }
@@ -1571,7 +1392,7 @@ width: 80px;
 height: 16px;
 text-align: center;
 color: #FFFFFF;
-
+margin: 0;
 
 
 
@@ -1588,7 +1409,7 @@ padding: 0px;
 
 width: 80px;
 height: 52px;
-
+margin: 0%;
 
 }
 .cta_minutes{
@@ -1598,7 +1419,8 @@ width: 80px;
 height: 36px;
 text-align: center;
 color: #FFFFFF;
-
+margin: 0
+;
 
 
 }
@@ -1609,7 +1431,7 @@ width: 80px;
 height: 16px;
 text-align: center;
 color: #FFFFFF;
-
+margin: 0;
 
 }
 
@@ -1624,7 +1446,7 @@ padding: 0px;
 
 width: 80px;
 height: 52px;
-
+margin: 0;
 
 }
 .cta_seconds{
@@ -1634,7 +1456,7 @@ width: 80px;
 height: 36px;
 text-align: center;
 color: #FFFFFF;
-
+margin: 0;
 
 
 }
@@ -1645,7 +1467,7 @@ width: 80px;
 height: 16px;
 text-align: center;
 color: #FFFFFF;
-
+margin: 0;
 
 
 }
